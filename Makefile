@@ -6,4 +6,4 @@ install:
 	bundle install
 
 test:
-	bundle exec ruby -r debug tests/*
+	bundle exec ruby tests/*

@@ -36,17 +36,17 @@ class ChessBoard
     ]
   end
 
-  def [](x_ind, y_ind)
-    @board[x_ind][y_ind]
+  def [](column, row)
+    @board[row][column]
   end
 
   def get(position)
-    x, y = position.split(//)
+    column, row = position.split(//)
 
-    x = "abcdefgh".index(x)
-    y = y.to_i - 1
+    column = "abcdefgh".index(column)
+    row = row.to_i - 1
 
-    self[x, y]
+    self[column, row]
   end
 end
 
@@ -58,6 +58,9 @@ class TestChessBoard < Test::Unit::TestCase
     assert_equal board[7, 7], BlackPieces::ROOK
 
     assert_equal board.get('e4'), ChessBoard::EMPTY_SQUARE
-    assert_equal board.get('g8'), BlackPieces::KNIGHT
+    assert_equal board.get('a1'), WhitePieces::ROOK
+    assert_equal board.get('a8'), BlackPieces::ROOK
+    assert_equal board.get('d1'), WhitePieces::QUEEN
+    assert_equal board.get('f7'), BlackPieces::PAWN
   end
 end
