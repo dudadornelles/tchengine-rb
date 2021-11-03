@@ -1,18 +1,19 @@
 module Chess
-
   class Board
     EMPTY = :empty
 
     def initialize
       @board = [
-        [Chess::Piece.new(:white, :rook), Chess::Piece.new(:white, :knight), Chess::Piece.new(:white, :bishop), Chess::Piece.new(:white, :queen), Chess::Piece.new(:white, :king), Chess::Piece.new(:white, :bishop), Chess::Piece.new(:white, :knight), Chess::Piece.new(:white, :rook)],
-        [Chess::Piece.new(:white, :pawn)] * 8,
+        [white(:rook), white(:knight), white(:bishop), white(:queen),
+         white(:king), white(:bishop), white(:knight), white(:rook)],
+        [white(:pawn)] * 8,
         [Chess::Board::EMPTY] * 8,
         [Chess::Board::EMPTY] * 8,
         [Chess::Board::EMPTY] * 8,
         [Chess::Board::EMPTY] * 8,
-        [Chess::Piece.new(:black, :pawn)] * 8,
-        [Chess::Piece.new(:black, :rook), Chess::Piece.new(:black, :knight), Chess::Piece.new(:black, :bishop), Chess::Piece.new(:black, :queen), Chess::Piece.new(:black, :king), Chess::Piece.new(:black, :bishop), Chess::Piece.new(:black, :knight), Chess::Piece.new(:black, :rook)]
+        [black(:pawn)] * 8,
+        [black(:rook), black(:knight), black(:bishop), black(:queen),
+         black(:king), black(:bishop), black(:knight), black(:rook)]
       ]
     end
 
@@ -29,5 +30,12 @@ module Chess
       self[row, column]
     end
   end
+end
 
+def white(piece)
+  Chess::Piece.new(:white, piece)
+end
+
+def black(piece)
+  Chess::Piece.new(:black, piece)
 end

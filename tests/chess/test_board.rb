@@ -9,7 +9,7 @@ class TestChessBoard < Test::Unit::TestCase
     assert_equal board[0, 0], Chess::Piece.new(:white, :rook)
     assert_equal board[0, 1], Chess::Piece.new(:white, :knight)
     assert_equal board[4, 4], Chess::Board::EMPTY
-    
+
     assert_equal board.get('a1'), Chess::Piece.new(:white, :rook)
     assert_equal board.get('c2'), Chess::Piece.new(:white, :pawn)
     assert_equal board.get('d4'), Chess::Board::EMPTY
