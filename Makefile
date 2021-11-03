@@ -6,4 +6,4 @@ install:
 	bundle install
 
 test:
-	bundle exec ruby tests/*
+	bundle exec ruby -Isrc/ -I${PWD} -e "Dir['tests/**/test_*.rb'].each {|file| require file }"
