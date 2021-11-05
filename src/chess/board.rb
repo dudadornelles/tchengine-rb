@@ -2,7 +2,7 @@ require 'chess/utils'
 
 module Chess
   class Board
-    extend Chess::Coordinates
+    include Coordinates
 
     EMPTY = :empty
 
@@ -28,7 +28,7 @@ module Chess
     def get(position)
       column, row = position.split(//)
 
-      column = "abcdefgh".index(column)
+      column = col_idx column
       row = row.to_i - 1
 
       self[row, column]

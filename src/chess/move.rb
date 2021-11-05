@@ -2,7 +2,7 @@ require 'chess/utils'
 
 module Chess
   class Move
-    extend Chess::Coordinates
+    extend Coordinates
 
     attr_reader :from, :to, :piece, :is_capture
 
