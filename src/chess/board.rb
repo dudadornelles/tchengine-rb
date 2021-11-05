@@ -1,5 +1,9 @@
+require 'chess/utils'
+
 module Chess
   class Board
+    extend Chess::Coordinates
+
     EMPTY = :empty
 
     def initialize

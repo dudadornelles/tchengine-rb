@@ -8,6 +8,10 @@ module Chess
     end
 
     def ==(other)
+      if not other.is_a? Piece
+        return false
+      end
+
       @color == other.color && @name == other.name
     end
   end
